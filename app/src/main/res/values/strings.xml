@@ -7,4 +7,7 @@
     <string name="ticket_queue">Queue</string>
     <string name="ticket_service">Service</string>
     <string name="ticket_customer">Customer</string>
+    <string name="login">LOGIN</string>
+    <string name="hint_username">username</string>
+    <string name="hint_passwd">password</string>
 </resources>

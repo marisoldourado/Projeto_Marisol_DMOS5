@@ -2,11 +2,9 @@ package com.dmos5.projeto_marisol_dmos5.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +37,8 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.Repository
     public void onBindViewHolder(@NonNull TicketAdapter.RepositoryViewHolder holder, int position) {
 
         final Ticket ticketItem = tickets.get(position);
-        holder.txtvTicketTitle.setText(tickets.get(position).getTitle());
-        holder.txtvTicketState.setText(tickets.get(position).getType());
+        holder.txtvTicketNumber.setText(tickets.get(position).getTicketNumber());
+        holder.txtvTicketState.setText(tickets.get(position).getState());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,12 +64,12 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.Repository
 
     class RepositoryViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView txtvTicketTitle, txtvTicketState;
+        private final TextView txtvTicketNumber, txtvTicketState;
 
         public RepositoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtvTicketTitle = itemView.findViewById(R.id.main_line_title);
-            txtvTicketState = itemView.findViewById(R.id.main_line_value);
+            txtvTicketNumber = itemView.findViewById(R.id.main_line_ticket_number);
+            txtvTicketState  = itemView.findViewById(R.id.main_line_state);
         }
     }
 
