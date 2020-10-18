@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:layout_margin="5dp"
+    android:maxHeight="250dp"
+    android:id="@+id/layout_listIncidents">
 
-    <TextView
-        android:id="@+id/main_line_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:layout_toStartOf="@+id/main_line_value"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorLabel"
-        tools:text="Line 1" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-    <TextView
-        android:id="@+id/main_line_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:textStyle="italic"
-        android:layout_toStartOf="@+id/main_line_select"
-        android:padding="16dp"
-        tools:text="-"/>
+        <ImageView
+            android:id="@+id/img_incident_impact"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:foreground="@mipmap/ic_ticket" />
 
-    <ImageButton
-        android:id="@+id/main_line_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:background="?selectableItemBackground"
-        android:contentDescription="TODO"
-        android:padding="16dp"
-        android:src="@mipmap/ic_ticket" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_line_ticket_number"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorLabel"
+                    android:textSize="20sp"
+                    tools:text="Titulo"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/main_line_state"
+                android:layout_weight="0"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="end"
+                android:textSize="15sp"
+                tools:text="Status" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
