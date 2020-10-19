@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.dmos5.projeto_marisol_dmos5.R;
 import com.dmos5.projeto_marisol_dmos5.api.RetrofitService;
@@ -23,14 +22,8 @@ import com.dmos5.projeto_marisol_dmos5.response.TicketResponse;
 import com.dmos5.projeto_marisol_dmos5.response.TicketSearchResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView mImageView;
+    private ImageView mImageView;
     private RecyclerView mRecyclerView;
     private TicketAdapter adapter;
     private ProgressBar ticketListProgress;
@@ -51,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Login login;
     private String username, password;
 
+    private  SharedPreferences sharedpreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +53,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intentExtras = getIntent();
         Bundle extrasBundle = intentExtras.getExtras();
 
-        if (extrasBundle != null) {
-            username = extrasBundle.getString("Username");
-            password = extrasBundle.getString("Password");
+        sharedpreferences = getSharedPreferences("PREFERENCE_USER",
+                Context.MODE_PRIVATE);
+
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setTitle(R.string.title_ticket_list);
+        }
+
+        if (sharedpreferences.contains(Constants.SHARED_USERNAME)) {
+            username = sharedpreferences.getString(Constants.SHARED_USERNAME, "");
+        }
+        if (sharedpreferences.contains(Constants.SHARED_PASSWORD)) {
+            password = sharedpreferences.getString(Constants.SHARED_PASSWORD, "");
         }
 
      // btnTicketAdd     = findViewById(R.id.fab_ticket_add);
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ticketListProgress = findViewById(R.id.ticketListProgress);
 
         adapter = new TicketAdapter(mTicketList, this);
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(adapter);
@@ -81,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void getTickets() {
 
-        login = new Login(Constants.USERNAME, Constants.PASSWORD);
-        //login = new Login(username, password);
+        //login = new Login(Constants.USERNAME, Constants.PASSWORD);
+        login = new Login(username, password);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitService.BASE_URL)
@@ -137,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 adapter.update(ticketResponse.getTicket(), mRecyclerView);
                             }
                         }
-
                         @Override
                         public void onFailure(Call<TicketResponse> call, Throwable t) {
                            Log.e(Constants.TAG,"ERRO: " + t.getMessage());
@@ -157,7 +160,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
     }
-
 
     @Override
     public void onClick(View view) {

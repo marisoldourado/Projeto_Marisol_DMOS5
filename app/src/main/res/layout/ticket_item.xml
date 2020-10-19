@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/img_incident_impact"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:foreground="@mipmap/ic_ticket" />
 
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:ellipsize="end"
-                    android:textColor="@color/colorLabel"
+                    android:textColor="@color/grey_color"
                     android:textSize="20sp"
                     tools:text="Titulo"/>
             </LinearLayout>

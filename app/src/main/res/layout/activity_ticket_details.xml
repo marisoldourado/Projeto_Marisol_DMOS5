@@ -15,16 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:indeterminate="true"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_marginTop="250dp"/>
-
-<!--    <android.support.v7.widget.Toolbar-->
-<!--        android:id="@+id/toolbarIncidentInfo"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:theme="@style/ToolbarColoredBackArrow"-->
-<!--        android:background="?attr/colorPrimary"-->
-<!--        android:minHeight="?attr/actionBarSize"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,13 +25,13 @@
         android:id="@+id/linLayoutInfo"
         android:layout_marginLeft="20dp"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/labelTicketCreated"
@@ -47,8 +39,15 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="17sp"
+                android:layout_marginTop="10dp"
                 android:text="@string/create_time"
-                android:textColor="@color/colorLabel"/>
+                android:textColor="@color/grey_color"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketCreated"
@@ -57,7 +56,8 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="teste" />
+                android:layout_marginTop="5dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/labelTicketNumber"
@@ -66,8 +66,14 @@
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:text="@string/ticket_number"
-                android:textColor="@color/colorLabel"
+                android:textColor="@color/grey_color"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketNumber"
@@ -76,7 +82,8 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="TN" />
+                android:layout_marginTop="5dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/labelTicketState"
@@ -85,8 +92,14 @@
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:text="@string/ticket_state"
-                android:textColor="@color/colorLabel"
+                android:textColor="@color/grey_color"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketState"
@@ -95,7 +108,8 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="valor" />
+                android:layout_marginTop="5dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/labelTicketPriority"
@@ -104,8 +118,14 @@
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:text="@string/ticket_priority"
-                android:textColor="@color/colorLabel"
+                android:textColor="@color/grey_color"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketPriority"
@@ -114,7 +134,8 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="valor" />
+                android:layout_marginTop="5dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/labelTicketQueue"
@@ -123,8 +144,14 @@
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:text="@string/ticket_queue"
-                android:textColor="@color/colorLabel"
+                android:textColor="@color/grey_color"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketQueue"
@@ -133,7 +160,8 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="valor" />
+                android:layout_marginTop="5dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/labelTicketCustomer"
@@ -142,8 +170,14 @@
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:text="@string/ticket_customer"
-                android:textColor="@color/colorLabel"
+                android:textColor="@color/grey_color"
                 android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/valueTicketCustomer"
@@ -152,30 +186,10 @@
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:textSize="16sp"
-                android:text="valor" />
-
-
-<!--            <EditText-->
-<!--                android:id="@+id/valueIncidentDescription"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:gravity="top|left"-->
-<!--                android:isScrollContainer="true"-->
-<!--                android:minLines="8"-->
-<!--                android:maxLines="8"-->
-<!--                android:hint="Descricao"-->
-<!--                android:inputType="textMultiLine"-->
-<!--                android:padding="10dp"-->
-<!--                android:focusable="false"-->
-<!--                android:text="description"-->
-<!--                android:textColor="@color/colorAccent"-->
-<!--                android:textAlignment="gravity"/>-->
-
-
+                android:layout_marginTop="5dp"
+                android:text="-" />
         </LinearLayout>
 
     </LinearLayout>
-
 
 </RelativeLayout>

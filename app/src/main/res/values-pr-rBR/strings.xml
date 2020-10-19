@@ -8,6 +8,9 @@
     <string name="ticket_service">Serviço</string>
     <string name="ticket_customer">Cliente</string>
     <string name="login">ENTRAR</string>
-    <string name="hint_username">usuário</string>
-    <string name="hint_passwd">senha</string>
+    <string name="ticket_title">Título</string>
+    <string name="hint_username">Usuário</string>
+    <string name="hint_passwd">Senha</string>
+    <string name="title_ticket_list">Listagem de Chamados</string>
+    <string name="fail_auth">Falha de autenticação</string>
 </resources>

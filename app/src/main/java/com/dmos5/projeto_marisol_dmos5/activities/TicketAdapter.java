@@ -43,15 +43,13 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.Repository
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // chama os detalhes
+                // show details
                 Intent intent = new Intent(mContext, TicketDetailsActivity.class);
                 intent.putExtra("TicketID", ticketItem.getTicketID());
                 intent.putExtra("TicketNumber", ticketItem.getTicketNumber());
                 mContext.startActivity(intent);
             }
         });
-
     }
 
     @Override
