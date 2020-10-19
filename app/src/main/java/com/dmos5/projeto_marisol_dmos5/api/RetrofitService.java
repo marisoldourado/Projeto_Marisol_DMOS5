@@ -6,6 +6,7 @@ import com.dmos5.projeto_marisol_dmos5.response.TicketSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -19,6 +20,6 @@ public interface RetrofitService {
     @GET("Ticket/{TicketID}?")
     Call<TicketResponse> getTicket(@Path("TicketID") String ticketIDs, @Query("UserLogin") String userLogin, @Query("Password") String password);
 
-    @GET("Session?")
+    @POST("Session?")
     Call<SessionResponse> createSession(@Query("UserLogin") String userLogin, @Query("Password") String password);
 }
