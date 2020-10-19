@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/recLayout"
+    android:layout_height="match_parent"
+    tools:context=".activities.TicketDetailsActivity">
+
+    <ProgressBar
+        android:id="@+id/ticketInfoProgress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_marginTop="250dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/linLayoutInfo"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/labelTicketCreated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:text="@string/create_time"
+                android:textColor="@color/grey_color"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketCreated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/labelTicketNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:text="@string/ticket_number"
+                android:textColor="@color/grey_color"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/labelTicketState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:text="@string/ticket_state"
+                android:textColor="@color/grey_color"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/labelTicketPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:text="@string/ticket_priority"
+                android:textColor="@color/grey_color"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/labelTicketQueue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:text="@string/ticket_queue"
+                android:textColor="@color/grey_color"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketQueue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/labelTicketCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:text="@string/ticket_customer"
+                android:textColor="@color/grey_color"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/valueTicketCustomer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:text="-" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

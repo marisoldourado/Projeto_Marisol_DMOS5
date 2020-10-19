@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Projeto_Marisol_DMOS5</string>
+    <string name="create_time">Create time</string>
+    <string name="ticket_state">State</string>
+    <string name="ticket_number">Ticket Number</string>
+    <string name="ticket_priority">Priority</string>
+    <string name="ticket_queue">Queue</string>
+    <string name="ticket_service">Service</string>
+    <string name="ticket_customer">Customer</string>
+    <string name="ticket_title">Title</string>
+    <string name="login">LOGIN</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_passwd">Password</string>
+    <string name="title_ticket_list">List of Tickets</string>
+    <string name="fail_auth">Authentication Fail</string>
+</resources>
