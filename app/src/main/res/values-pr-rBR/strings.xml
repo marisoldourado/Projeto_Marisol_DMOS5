@@ -13,4 +13,5 @@
     <string name="hint_passwd">Senha</string>
     <string name="title_ticket_list">Listagem de Chamados</string>
     <string name="fail_auth">Falha de autenticação</string>
+    <string name="fields_validate">Preencha todos os campos!</string>
 </resources>

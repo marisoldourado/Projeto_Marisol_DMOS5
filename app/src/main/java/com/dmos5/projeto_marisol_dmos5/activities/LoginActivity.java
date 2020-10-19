@@ -50,7 +50,13 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if(view == btnLogin){
-            verifyAuth(inputUser.getText().toString(), inputPassword.getText().toString() );
+
+            if( !inputUser.getText().toString().equals("") && !inputPassword.getText().toString().equals("") ){
+                verifyAuth(inputUser.getText().toString(), inputPassword.getText().toString() );
+            }
+            else {
+                Toast.makeText(this, getString(R.string.fields_validate), Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -71,7 +77,6 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
             @Override
             public void onResponse(Call<SessionResponse> call, Response<SessionResponse> response) {
                 if (!response.isSuccessful()) {
-                    failAuth();
                     Log.e(Constants.TAG,"ERRO: Network Connection Invalid " + response.code());
                 }
                 else {
@@ -92,18 +97,19 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
 
     private void isSession(String sessionID, Login login) {
 
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(Constants.SHARED_USERNAME, login.getUserLogin());
-        editor.putString(Constants.SHARED_PASSWORD, login.getPassword());
-        editor.commit();
+        if (sessionID != null) {
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("SessionID", sessionID);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putString(Constants.SHARED_USERNAME, login.getUserLogin());
+            editor.putString(Constants.SHARED_PASSWORD, login.getPassword());
+            editor.commit();
 
-        startActivity(intent);
-    }
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("SessionID", sessionID);
 
-    private void failAuth() {
-        Toast.makeText(this, getString(R.string.fail_auth), Toast.LENGTH_LONG).show();
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, getString(R.string.fail_auth), Toast.LENGTH_LONG).show();
+        }
     }
 }

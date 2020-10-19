@@ -13,4 +13,5 @@
     <string name="hint_passwd">Password</string>
     <string name="title_ticket_list">List of Tickets</string>
     <string name="fail_auth">Authentication Fail</string>
+    <string name="fields_validate">Enter all fields!</string>
 </resources>
